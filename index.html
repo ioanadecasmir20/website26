@@ -1,0 +1,1475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>LS Security | Professional Security Services in the UK</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="LS Security provides professional private security services across the UK, including door supervision, security guarding, CCTV monitoring, mobile patrols and keyholding." />
+
+  <!-- Favicon (add your file to /images) -->
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --primary: #1515c9;
+      --primary-dark: #0c0c7d;
+      --accent: #0099cc;
+      --bg: #050509;
+      --bg-alt: #0f1118;
+      --text: #f4f4f7;
+      --muted: #a9b0c5;
+      --card-bg: #151827;
+      --border-subtle: rgba(255, 255, 255, 0.06);
+      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.45);
+      --radius-lg: 24px;
+      --radius-pill: 999px;
+      --transition-fast: 0.2s ease;
+      --max-width: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: radial-gradient(circle at top, #12152b 0, #050509 55%, #020209 100%);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    main {
+      min-height: 100vh;
+    }
+
+    /* Layout helpers */
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    section {
+      padding: 5rem 0;
+    }
+
+    h1, h2, h3 {
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      padding: 0.35rem 0.9rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: linear-gradient(135deg, rgba(21, 21, 201, 0.85), rgba(0, 153, 204, 0.75));
+      color: #fdfdff;
+    }
+
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #4fff87;
+      box-shadow: 0 0 0 6px rgba(79, 255, 135, 0.18);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      padding: 0.8rem 1.6rem;
+      border-radius: var(--radius-pill);
+      border: none;
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    .btn-ghost {
+      background: rgba(10, 12, 22, 0.82);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: var(--muted);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(28, 32, 60, 0.95);
+      color: var(--text);
+    }
+
+    .pill {
+      padding: 0.35rem 0.9rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      font-size: 0.8rem;
+      color: var(--muted);
+      background: rgba(9, 11, 24, 0.85);
+    }
+
+    /* Header + Nav */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(22px);
+      background: linear-gradient(to bottom, rgba(5, 5, 12, 0.95), rgba(5, 5, 12, 0.7), transparent);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 0;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .logo-box {
+      width: 44px;
+      height: 44px;
+      border-radius: 16px;
+      background: radial-gradient(circle at 20% 20%, #4c4cff, #1515c9 38%, #090a1d 100%);
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+
+    .logo-box img {
+      width: 70%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
+    .brand-name {
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+    }
+
+    .brand-tagline {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.4rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      position: relative;
+      padding-bottom: 0.2rem;
+      cursor: pointer;
+      transition: color var(--transition-fast);
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      transition: width var(--transition-fast);
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .nav-phone {
+      display: none;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .nav-phone span {
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .hamburger {
+      display: none;
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(9, 11, 26, 0.9);
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .hamburger span,
+    .hamburger span::before,
+    .hamburger span::after {
+      content: "";
+      display: block;
+      width: 16px;
+      height: 2px;
+      border-radius: 999px;
+      background: #ffffff;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .hamburger span::before {
+      transform: translateY(-5px);
+    }
+
+    .hamburger span::after {
+      transform: translateY(5px);
+    }
+
+    .hamburger.active span {
+      transform: rotate(45deg);
+    }
+
+    .hamburger.active span::before {
+      transform: rotate(-90deg);
+    }
+
+    .hamburger.active span::after {
+      opacity: 0;
+    }
+
+    /* Hero */
+    .hero {
+      padding-top: 3.2rem;
+      padding-bottom: 4rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.1fr);
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-title {
+      font-size: clamp(2.3rem, 4vw, 3rem);
+      line-height: 1.12;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-title span {
+      background: linear-gradient(135deg, #ffffff, #b4c0ff);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 0.98rem;
+      color: var(--muted);
+      max-width: 32rem;
+      margin-bottom: 1.7rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .hero-note {
+      margin-top: 1rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .hero-right {
+      position: relative;
+    }
+
+    .hero-card {
+      position: relative;
+      padding: 1.4rem;
+      border-radius: var(--radius-lg);
+      background: radial-gradient(circle at top left, rgba(62, 113, 255, 0.3), rgba(6, 7, 18, 0.96));
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+    }
+
+    .hero-screen {
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: radial-gradient(circle at top left, rgba(99, 132, 255, 0.3), #050711);
+      padding: 0.55rem;
+    }
+
+    .hero-screen-inner {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      background: url("images/cctv-control-room.jpg") center/cover no-repeat;
+      min-height: 210px;
+      position: relative;
+    }
+
+    .hero-screen-inner::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(4, 6, 20, 0.2), rgba(4, 6, 20, 0.75));
+    }
+
+    .hero-overlay-strip {
+      position: absolute;
+      left: 1.4rem;
+      bottom: 1.4rem;
+      right: 1.4rem;
+      padding: 0.7rem 0.9rem;
+      border-radius: 14px;
+      background: rgba(6, 7, 20, 0.95);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .hero-overlay-strip h3 {
+      font-size: 0.92rem;
+      margin-bottom: 0.15rem;
+    }
+
+    .hero-overlay-strip p {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.32rem 0.7rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.76rem;
+      background: rgba(18, 130, 73, 0.2);
+      border: 1px solid rgba(104, 240, 169, 0.6);
+      color: #d9ffe9;
+    }
+
+    .status-light {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #6bff9f;
+      box-shadow: 0 0 0 5px rgba(107, 255, 159, 0.24);
+    }
+
+    .hero-facts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.1rem;
+      font-size: 0.78rem;
+    }
+
+    .hero-fact {
+      flex: 1 1 120px;
+      padding: 0.7rem 0.9rem;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(6, 8, 22, 0.9);
+      color: var(--muted);
+    }
+
+    .hero-fact strong {
+      display: block;
+      font-size: 1rem;
+      color: var(--text);
+    }
+
+    /* Section headings */
+    .section-heading {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      margin-bottom: 2rem;
+    }
+
+    .section-heading h2 {
+      font-size: 1.6rem;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      max-width: 34rem;
+      font-size: 0.95rem;
+    }
+
+    /* Services */
+    .section-services {
+      background: radial-gradient(circle at top, #15182a, #050509 58%);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+
+    .service-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.4rem 1.35rem;
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border 0.18s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+      border-color: rgba(105, 140, 255, 0.9);
+    }
+
+    .service-label {
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .service-card h3 {
+      font-size: 1.02rem;
+    }
+
+    .service-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .service-meta {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 0.8rem;
+      color: var(--muted);
+      gap: 0.4rem;
+    }
+
+    .service-meta span {
+      color: #d4dbff;
+      font-weight: 500;
+      font-size: 0.78rem;
+    }
+
+    /* Vacancies */
+    .section-vacancies {
+      background: var(--bg-alt);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .vacancies-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 2.5rem;
+      align-items: flex-start;
+    }
+
+    .vacancy-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .vacancy-card {
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: linear-gradient(135deg, rgba(18, 18, 40, 0.96), rgba(9, 11, 26, 0.98));
+      padding: 1.2rem 1.3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .vacancy-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.7rem;
+    }
+
+    .vacancy-title {
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    .vacancy-tag {
+      padding: 0.22rem 0.65rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.75rem;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: var(--muted);
+    }
+
+    .vacancy-meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .vacancy-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .vacancy-meta span::before {
+      content: "•";
+      color: var(--accent);
+    }
+
+    .vacancy-actions {
+      margin-top: 0.7rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .vacancies-side {
+      background: linear-gradient(145deg, rgba(21, 21, 201, 0.1), rgba(0, 0, 0, 0.3));
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 1.3rem 1.4rem;
+    }
+
+    .vacancies-side h3 {
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .vacancies-side p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 0.8rem;
+    }
+
+    .vacancies-side ul {
+      list-style: none;
+      font-size: 0.86rem;
+      color: var(--muted);
+      display: grid;
+      gap: 0.35rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .vacancies-side li::before {
+      content: "✓";
+      margin-right: 0.4rem;
+      color: var(--accent);
+    }
+
+    /* About / Industries */
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 2.4rem;
+      align-items: flex-start;
+    }
+
+    .about-text p {
+      color: var(--muted);
+      font-size: 0.94rem;
+      margin-bottom: 1rem;
+    }
+
+    .about-points {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.7rem;
+      margin-bottom: 1.1rem;
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
+    .about-points span::before {
+      content: "▸";
+      color: var(--accent);
+      margin-right: 0.35rem;
+    }
+
+    .about-highlight {
+      padding: 0.8rem 0.9rem;
+      border-radius: 18px;
+      border: 1px dashed rgba(255, 255, 255, 0.24);
+      background: rgba(7, 9, 21, 0.94);
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
+    .about-card {
+      border-radius: 20px;
+      padding: 1.2rem 1.3rem;
+      background: radial-gradient(circle at top left, rgba(71, 97, 255, 0.3), #060815);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .about-card h3 {
+      font-size: 0.98rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .industries {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.45rem 1rem;
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
+    .industries span::before {
+      content: "●";
+      font-size: 0.6rem;
+      margin-right: 0.4rem;
+      color: var(--accent);
+    }
+
+    .about-stats {
+      margin-top: 0.9rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      font-size: 0.84rem;
+    }
+
+    .about-stat {
+      padding: 0.4rem 0.75rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(5, 7, 20, 0.95);
+      color: var(--text);
+    }
+
+    /* Contact */
+    .section-contact {
+      background: radial-gradient(circle at top, #17192b, #050509 55%);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+      gap: 2.3rem;
+      align-items: flex-start;
+    }
+
+    .contact-card {
+      padding: 1.4rem 1.5rem;
+      border-radius: var(--radius-lg);
+      background: var(--card-bg);
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .contact-card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .contact-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .contact-details {
+      display: grid;
+      gap: 0.35rem;
+      font-size: 0.9rem;
+    }
+
+    .contact-details a {
+      color: #d6deff;
+    }
+
+    .contact-details span {
+      color: var(--muted);
+    }
+
+    form {
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    label {
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 0.7rem 0.9rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(7, 9, 23, 0.96);
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.9rem;
+      outline: none;
+      transition: border var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: rgba(119, 154, 255, 0.95);
+      box-shadow: 0 0 0 1px rgba(119, 154, 255, 0.5);
+      background: rgba(9, 11, 28, 0.98);
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+    }
+
+    .form-footnote {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 0.45rem;
+    }
+
+    .form-success {
+      display: none;
+      margin-top: 0.7rem;
+      font-size: 0.82rem;
+      color: #9dffb6;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-subtle);
+      padding: 1.4rem 0 1.6rem;
+      background: rgba(2, 3, 8, 0.96);
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+    }
+
+    .footer-links a:hover {
+      color: var(--text);
+    }
+
+    /* Responsive */
+    @media (max-width: 960px) {
+      .hero-grid,
+      .about-grid,
+      .vacancies-layout,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-right {
+        order: -1;
+      }
+
+      .hero-card {
+        max-width: 520px;
+        margin: 0 auto;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .nav-phone {
+        display: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        position: fixed;
+        inset: 60px 0 auto 0;
+        transform: translateY(-120%);
+        opacity: 0;
+        pointer-events: none;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.2rem 1.5rem 1.4rem;
+        gap: 0.9rem;
+        background: rgba(5, 6, 14, 0.98);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        transition: transform 0.22s ease, opacity 0.22s ease;
+      }
+
+      .nav-links.open {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .nav-phone {
+        display: flex;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      section {
+        padding: 4rem 0;
+      }
+
+      .hero {
+        padding-top: 2.4rem;
+      }
+
+      .hero-meta {
+        gap: 0.6rem;
+      }
+
+      .services-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .about-points {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .industries {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .contact-card,
+      .vacancies-side {
+        padding: 1.2rem 1.15rem;
+      }
+
+      .form-row {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <div class="nav-left">
+      <div class="logo-box">
+        <!-- Replace src with your logo file in /images -->
+        <img src="images/ls-security-logo.png" alt="LS Security logo" />
+      </div>
+      <div class="brand-text">
+        <div class="brand-name">LS Security</div>
+        <div class="brand-tagline">Professional Private Security | UK</div>
+      </div>
+    </div>
+
+    <nav>
+      <div class="nav-links" id="navLinks">
+        <a data-scroll="#hero">Home</a>
+        <a data-scroll="#services">Services</a>
+        <a data-scroll="#about">Sectors</a>
+        <a data-scroll="#vacancies">Vacancies</a>
+        <a data-scroll="#contact">Contact</a>
+      </div>
+    </nav>
+
+    <div class="nav-cta">
+      <div class="nav-phone">
+        <span>020 8243 4593</span>
+      </div>
+      <button class="btn btn-ghost" data-scroll="#contact">Request cover</button>
+    </div>
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="badge">
+          <span class="badge-dot"></span>
+          24/7 Professional Security Cover
+        </div>
+        <h1 class="hero-title">
+          Smart, reliable protection for your
+          <span>people, property &amp; reputation.</span>
+        </h1>
+        <p class="hero-subtitle">
+          LS Security provides SIA-licensed officers, CCTV operators and mobile patrols across the UK,
+          delivering professional, compliant protection tailored to your organisation.
+        </p>
+
+        <div class="hero-meta">
+          <span class="pill">SIA-licensed personnel</span>
+          <span class="pill">UK-wide cover</span>
+          <span class="pill">Short-notice deployments</span>
+        </div>
+
+        <div class="hero-actions">
+          <button class="btn btn-primary" data-scroll="#contact">
+            Book a consultation
+          </button>
+          <button class="btn btn-ghost" data-scroll="#services">
+            View our services
+          </button>
+        </div>
+        <p class="hero-note">
+          Call us on <strong>020 8243 4593</strong> or email
+          <a href="mailto:info@lssecurity.co.uk">info@lssecurity.co.uk</a> for immediate support.
+        </p>
+      </div>
+
+      <div class="hero-right">
+        <div class="hero-card">
+          <div class="hero-screen">
+            <div class="hero-screen-inner">
+              <!-- Background image is set via CSS from /images/cctv-control-room.jpg -->
+            </div>
+          </div>
+
+          <div class="hero-overlay-strip">
+            <div>
+              <h3>Live CCTV Monitoring</h3>
+              <p>Multiple sites, one control room. Real-time incident response.</p>
+            </div>
+            <div class="status-pill">
+              <span class="status-light"></span>
+              System online
+            </div>
+          </div>
+
+          <div class="hero-facts">
+            <div class="hero-fact">
+              <strong>Door Supervision</strong>
+              Licensed officers for hospitality, venues and events.
+            </div>
+            <div class="hero-fact">
+              <strong>Manned Guarding</strong>
+              Static &amp; concierge security for commercial premises.
+            </div>
+            <div class="hero-fact">
+              <strong>Mobile &amp; Keyholding</strong>
+              Alarm response and out-of-hours patrols.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section-services" id="services">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Security services built around your risks</h2>
+        <p>
+          Whether you manage a single premises or a nationwide portfolio, LS Security provides scalable protection,
+          delivered by vetted, SIA-licensed professionals.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <article class="service-card">
+          <div class="service-label">Frontline protection</div>
+          <h3>Door Supervision</h3>
+          <p>
+            Professional door supervisors for bars, clubs, late-night venues and licensed premises, focusing on access
+            control, customer care and incident management.
+          </p>
+          <div class="service-meta">
+            <span>Licensed &amp; experienced staff</span>
+            <span>Evenings &amp; weekends</span>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <div class="service-label">Manned guarding</div>
+          <h3>Static &amp; Concierge Security</h3>
+          <p>
+            Uniformed officers to protect offices, warehouses, residential blocks and construction sites, combining
+            access control, visitor management and regular patrols.
+          </p>
+          <div class="service-meta">
+            <span>Day &amp; night cover</span>
+            <span>Site-specific assignments</span>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <div class="service-label">Monitoring</div>
+          <h3>CCTV Operators &amp; Remote Monitoring</h3>
+          <p>
+            SIA CCTV-qualified staff to manage on-site systems or integrate with remote monitoring, ensuring fast
+            detection, escalation and evidence gathering.
+          </p>
+          <div class="service-meta">
+            <span>Control-room trained</span>
+            <span>Incident reporting</span>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <div class="service-label">Rapid response</div>
+          <h3>Mobile Patrols &amp; Keyholding</h3>
+          <p>
+            Random and scheduled mobile patrols, lock/unlock services and professional keyholding to ensure your
+            premises are secure out of hours.
+          </p>
+          <div class="service-meta">
+            <span>Marked vehicles</span>
+            <span>Alarm response</span>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <div class="service-label">Events &amp; crowd safety</div>
+          <h3>Events, Festivals &amp; Stewarding</h3>
+          <p>
+            Crowd management, ticketing, search teams and backstage security for events of all sizes, aligned with your
+            risk assessments and licensing conditions.
+          </p>
+          <div class="service-meta">
+            <span>Flexible teams</span>
+            <span>Short-notice cover</span>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <div class="service-label">Bespoke solutions</div>
+          <h3>Corporate &amp; Retail Security</h3>
+          <p>
+            Plain-clothes and uniformed officers focused on loss prevention, customer service and brand protection in
+            corporate offices, retail parks and shopping centres.
+          </p>
+          <div class="service-meta">
+            <span>Covert &amp; overt options</span>
+            <span>Tailored assignments</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- About / Sectors -->
+  <section id="about">
+    <div class="container about-grid">
+      <div class="about-text">
+        <div class="section-heading">
+          <h2>Trusted security partner for UK businesses</h2>
+          <p>
+            LS Security operates across the UK private security industry, working with clients ranging from independent
+            venues to multi-site organisations. Our focus is simple: professional, reliable protection that reflects
+            your brand and keeps your people safe.
+          </p>
+        </div>
+        <p>
+          Every assignment is risk-assessed and supported by clear instructions for our officers. We prioritise
+          communication, visible supervision and transparent reporting, so you always know who is on site and what is
+          happening.
+        </p>
+
+        <div class="about-points">
+          <span>Fully SIA-licensed and vetted officers</span>
+          <span>Professional uniforms &amp; site-specific briefing</span>
+          <span>Incident logs and post-event reporting</span>
+          <span>Flexible contracts – ad hoc or long-term</span>
+        </div>
+
+        <div class="about-highlight">
+          Looking for cover on a specific date or site? Share your requirements and we’ll build a tailored security
+          plan, including officer numbers, timings and reporting lines.
+        </div>
+      </div>
+
+      <div class="about-card">
+        <h3>Key sectors we protect</h3>
+        <div class="industries">
+          <span>Hospitality &amp; nightlife venues</span>
+          <span>Corporate offices &amp; business parks</span>
+          <span>Retail parks &amp; shopping centres</span>
+          <span>Construction &amp; vacant properties</span>
+          <span>Residential blocks &amp; estates</span>
+          <span>Events, festivals &amp; stadiums</span>
+        </div>
+
+        <div class="about-stats">
+          <div class="about-stat">24/7 cover available</div>
+          <div class="about-stat">Planned &amp; short-notice deployments</div>
+          <div class="about-stat">UK-wide coverage</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vacancies -->
+  <section class="section-vacancies" id="vacancies">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Vacancies &amp; opportunities with LS Security</h2>
+        <p>
+          We are always interested in speaking with professional, customer-focused security officers.
+          If you hold a valid SIA licence and pride yourself on your communication skills, we’d like to hear from you.
+        </p>
+      </div>
+
+      <div class="vacancies-layout">
+        <div class="vacancy-list">
+          <article class="vacancy-card">
+            <div class="vacancy-header">
+              <div class="vacancy-title">Door Supervisors</div>
+              <div class="vacancy-tag">Evenings &amp; weekends</div>
+            </div>
+            <div class="vacancy-meta">
+              <span>London &amp; South East</span>
+              <span>SIA Door Supervisor licence required</span>
+              <span>Hospitality &amp; events venues</span>
+            </div>
+            <div class="vacancy-actions">
+              <a class="btn btn-primary"
+                 href="mailto:info@lssecurity.co.uk?subject=Door%20Supervisor%20Application&amp;body=Please%20attach%20your%20CV%20and%20SIA%20licence%20details.">
+                Apply via email
+              </a>
+              <span class="pill">Attach CV &amp; copy of SIA badge</span>
+            </div>
+          </article>
+
+          <article class="vacancy-card">
+            <div class="vacancy-header">
+              <div class="vacancy-title">Security Officers – Corporate &amp; Retail</div>
+              <div class="vacancy-tag">Full &amp; part-time</div>
+            </div>
+            <div class="vacancy-meta">
+              <span>London &amp; surrounding areas</span>
+              <span>SIA Security Guarding or Door Supervisor</span>
+              <span>Customer-focused roles</span>
+            </div>
+            <div class="vacancy-actions">
+              <a class="btn btn-primary"
+                 href="mailto:info@lssecurity.co.uk?subject=Security%20Officer%20Application&amp;body=Please%20attach%20your%20CV%20and%20SIA%20licence%20details.">
+                Apply via email
+              </a>
+              <span class="pill">Experience in corporate/retail preferred</span>
+            </div>
+          </article>
+
+          <article class="vacancy-card">
+            <div class="vacancy-header">
+              <div class="vacancy-title">CCTV Operators</div>
+              <div class="vacancy-tag">Control room</div>
+            </div>
+            <div class="vacancy-meta">
+              <span>London &amp; remote monitoring</span>
+              <span>CCTV (PSS) SIA licence required</span>
+              <span>Incident reporting &amp; escalation</span>
+            </div>
+            <div class="vacancy-actions">
+              <a class="btn btn-primary"
+                 href="mailto:info@lssecurity.co.uk?subject=CCTV%20Operator%20Application&amp;body=Please%20attach%20your%20CV%20and%20SIA%20licence%20details.">
+                Apply via email
+              </a>
+              <span class="pill">Control room experience an advantage</span>
+            </div>
+          </article>
+        </div>
+
+        <aside class="vacancies-side">
+          <h3>How to apply</h3>
+          <p>
+            To be considered for current or future roles with LS Security, please email your CV and a clear copy of your
+            SIA licence to <a href="mailto:info@lssecurity.co.uk">info@lssecurity.co.uk</a> with the role you are
+            interested in.
+          </p>
+          <ul>
+            <li>Valid SIA licence (Door Supervisor, Security Guarding or CCTV)</li>
+            <li>Right to work in the UK and a 5-year checkable history</li>
+            <li>Excellent communication and customer service skills</li>
+            <li>Professional appearance and timekeeping</li>
+          </ul>
+          <p class="pill">
+            We review applications on an ongoing basis and will contact suitable candidates when shifts become available.
+          </p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section-contact" id="contact">
+    <div class="container contact-grid">
+      <div>
+        <div class="section-heading">
+          <h2>Discuss your security requirements</h2>
+          <p>
+            Tell us about your site, event or organisation and we’ll come back with a clear proposal, including pricing,
+            deployment options and recommended officer numbers.
+          </p>
+        </div>
+
+        <div class="contact-card">
+          <h3>Direct contact</h3>
+          <p>Use the form to send us an enquiry, or reach us directly using the details below.</p>
+          <div class="contact-details">
+            <span>Email:
+              <a href="mailto:info@lssecurity.co.uk">info@lssecurity.co.uk</a></span>
+            <span>Telephone:
+              <a href="tel:+442082434593">020 8243 4593</a></span>
+            <span>Service hours: 24/7 cover available by arrangement</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <h3>Request a security quote</h3>
+        <form id="quoteForm">
+          <div class="form-row">
+            <div>
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" required />
+            </div>
+            <div>
+              <label for="company">Company (optional)</label>
+              <input id="company" name="company" type="text" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div>
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required />
+            </div>
+            <div>
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" required />
+            </div>
+          </div>
+
+          <div>
+            <label for="service">Type of service</label>
+            <select id="service" name="service">
+              <option value="Door Supervision">Door Supervision</option>
+              <option value="Static / Concierge Security">Static / Concierge Security</option>
+              <option value="CCTV Monitoring">CCTV Monitoring</option>
+              <option value="Mobile Patrols & Keyholding">Mobile Patrols &amp; Keyholding</option>
+              <option value="Events & Crowd Management">Events &amp; Crowd Management</option>
+              <option value="Other">Other / Not sure</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="message">Briefly describe your requirements</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+
+          <button class="btn btn-primary" type="submit">Send enquiry</button>
+          <div class="form-footnote">
+            By submitting this form you agree to be contacted by LS Security regarding your enquiry.
+          </div>
+          <div class="form-success" id="formSuccess">
+            Thank you – your message has been prepared in your email client. Please press send to complete your enquiry.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div>© <span id="year"></span> LS Security. All rights reserved.</div>
+    <div class="footer-links">
+      <span>Private Security Industry – UK</span>
+      <a data-scroll="#services">Services</a>
+      <a data-scroll="#vacancies">Vacancies</a>
+      <a data-scroll="#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Smooth scrolling for nav links and buttons
+  document.querySelectorAll("[data-scroll]").forEach(function (el) {
+    el.addEventListener("click", function (e) {
+      var target = document.querySelector(el.getAttribute("data-scroll"));
+      if (!target) return;
+      e.preventDefault();
+      var y = target.getBoundingClientRect().top + window.pageYOffset - 80;
+      window.scrollTo({ top: y, behavior: "smooth" });
+
+      // Close mobile nav if open
+      var navLinks = document.getElementById("navLinks");
+      var hamburger = document.getElementById("hamburger");
+      if (navLinks && navLinks.classList.contains("open")) {
+        navLinks.classList.remove("open");
+        hamburger.classList.remove("active");
+      }
+    });
+  });
+
+  // Mobile nav toggle
+  var hamburger = document.getElementById("hamburger");
+  var navLinks = document.getElementById("navLinks");
+  if (hamburger && navLinks) {
+    hamburger.addEventListener("click", function () {
+      hamburger.classList.toggle("active");
+      navLinks.classList.toggle("open");
+    });
+  }
+
+  // Simple email hand-off for the quote form
+  var form = document.getElementById("quoteForm");
+  var formSuccess = document.getElementById("formSuccess");
+
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      var data = new FormData(form);
+      var name = data.get("name") || "";
+      var company = data.get("company") || "";
+      var email = data.get("email") || "";
+      var phone = data.get("phone") || "";
+      var service = data.get("service") || "";
+      var message = data.get("message") || "";
+
+      var subject = encodeURIComponent("Security enquiry from " + name);
+      var bodyLines = [
+        "Name: " + name,
+        "Company: " + company,
+        "Email: " + email,
+        "Phone: " + phone,
+        "Service type: " + service,
+        "",
+        "Requirements:",
+        message
+      ];
+
+      var body = encodeURIComponent(bodyLines.join("\n"));
+      var mailto = "mailto:info@lssecurity.co.uk?subject=" + subject + "&body=" + body;
+
+      window.location.href = mailto;
+
+      if (formSuccess) {
+        formSuccess.style.display = "block";
+      }
+    });
+  }
+
+  // Current year in footer
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
